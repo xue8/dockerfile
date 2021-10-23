@@ -1,9 +1,10 @@
 FROM arm64v8/debian:bullseye-slim
 LABEL maintainer="rongyuexue@gmail.com"
 
-RUN set -eux;               \
-	apt-get update &&       \
-	apt-get install -y      \
+RUN set -eux                \
+    && sed -i 's@deb.debian.org/debian@mirrors.163.com/debian@g' /etc/apt/sources.list  \
+    && apt-get update          \
+	&& apt-get install -y      \
 	curl	                \
     wget	                \
     vim		                \
@@ -21,4 +22,4 @@ RUN set -eux;               \
     iputils-ping	        \
     net-tools	            \
     procps	                \
-    && apt-get clean        \
+    && apt-get clean        

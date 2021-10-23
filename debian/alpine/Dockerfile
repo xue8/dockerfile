@@ -1,9 +1,12 @@
 FROM alpine:3.14.2
 LABEL maintainer="rongyuexue@gmail.com"
 
-RUN set -eux;               \
-	apt-get update &&       \
-	apt-get install -y      \
+RUN echo 'https://mirrors.aliyun.com/alpine/v3.14/main' >> /etc/apk/repositories &&      \
+    echo 'https://mirrors.aliyun.com/alpine/v3.14/community' >> /etc/apk/repositories
+
+RUN set -eux                \
+	apk update &&           \
+	apk add                 \
 	curl	                \
     wget	                \
     vim		                \
@@ -18,7 +21,7 @@ RUN set -eux;               \
     telnet	                \
     lrzsz	                \
     lsof	                \
-    iputils-ping	        \
+    iputils     	        \
     net-tools	            \
     procps	                \
-    && apt-get clean        \
+    && apk clean           
