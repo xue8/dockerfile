@@ -1,0 +1,24 @@
+FROM arm64v8/alpine:3.14.2
+LABEL maintainer="rongyuexue@gmail.com"
+
+RUN set -eux;               \
+	apt-get update &&       \
+	apt-get install -y      \
+	curl	                \
+    wget	                \
+    vim		                \
+    bash	                \
+    tar	                    \
+    file	                \
+    iptables	            \
+    jq	                    \
+    ngrep	                \
+    strace	                \
+    tcpdump	                \
+    telnet	                \
+    lrzsz	                \
+    lsof	                \
+    iputils-ping	        \
+    net-tools	            \
+    procps	                \
+    && apt-get clean        \
