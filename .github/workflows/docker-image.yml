@@ -16,4 +16,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . -f debian/bullseye/Dockerfile -t ${{secrets.DOCKER_USERNAME}}:${GITHUB_REF:10}
     - name: Push the Docker images
-      run: docker login -u ${{secrets.DOCKER_USERNAME}} --password-stdin ${{secrets.DOCKER_ACCESS}} && docker push ${{secrets.DOCKER_USERNAME}}:${GITHUB_REF:10}
+      run: echo ${{secrets.DOCKER_ACCESS}} | docker login -u ${{secrets.DOCKER_USERNAME}} --password-stdin  && docker push ${{secrets.DOCKER_USERNAME}}:${GITHUB_REF:10}
