@@ -25,7 +25,7 @@ jobs:
         file: ./debian/bullseye/Dockerfile
         push: true
         tags: |
-          ${{ secrets.DOCKER_USERNAME }}/amd64-debian:${GITHUB_REF:10}
+          xue8/amd64-debian:v0.0.1
     - name: Build && Push
       uses: docker/build-push-action@v2
       with:
