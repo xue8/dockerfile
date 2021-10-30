@@ -16,7 +16,7 @@ jobs:
     - name: Login
       uses: docker/login-action@v1
       with:
-        username: ${{ secrets.DOCKER_USERNAME }}
+        username: xue8
         password: ${{ secrets.DOCKER_ACCESS }}
     - name: Build && Push
       uses: docker/build-push-action@v2
@@ -33,4 +33,4 @@ jobs:
         file: ./debian/bullseye/Dockerfile.arm64
         push: true
         tags: |
-          ${{ secrets.DOCKER_USERNAME }}/arm64v8-debian:${GITHUB_REF:10}
+          xue8/arm64v8-debian:${GITHUB_REF:10}
