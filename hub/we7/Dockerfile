@@ -25,4 +25,6 @@ RUN set -eux    \
 
 COPY ./www.conf /etc/nginx/conf.d/
 
+COPY ./entrypoint.sh /workspace/
+
 ENTRYPOINT /workspace/entrypoint.sh
