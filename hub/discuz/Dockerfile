@@ -26,7 +26,6 @@ RUN set -eux    \
 
 RUN set -eux    \
     && rm /etc/nginx/sites-enabled/default  \
-    && chmod -R 777 /data/www/  \
     && sed -i 's#user www-data;#user root;#g' /etc/nginx/nginx.conf 
 
 COPY ./www.conf /etc/nginx/conf.d/
