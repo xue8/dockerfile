@@ -9,4 +9,4 @@
  chmod -R 777 /data/www
  mv /tmp/install.php  /data/www/web
 
- grep 'v'
+tail -f  /etc/hosts

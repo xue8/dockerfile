@@ -23,6 +23,9 @@ RUN set -eux    \
     && wget https://cdn.w7.cc/download/WeEngine-Laster-Online.zip   \
     && unzip WeEngine-Laster-Online.zip     
 
+RUN set -eux    \
+    && rm /etc/nginx/sites-enabled/default
+
 COPY ./www.conf /etc/nginx/conf.d/
 
 COPY ./entrypoint.sh /workspace/
